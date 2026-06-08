@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Samrith Ram Karengula | Portfolio</title>
+
+<meta name="description" content="Portfolio of Samrith Ram Karengula, a 3rd Year B.Tech CSE student and aspiring web developer.">
+<meta name="keywords" content="Portfolio, Samrith Ram Karengula, Web Developer, HTML, CSS, JavaScript, CSE Student">
+<meta name="author" content="Samrith Ram Karengula">
+
+<style>
+
+/* =========================
+   THEME VARIABLES
+========================= */
+:root{
+    --bg:#f4f7fc;
+    --card:#ffffff;
+    --text:#222;
+    --primary:#2563eb;
+    --secondary:#1e40af;
+    --shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+body.dark{
+    --bg:#121212;
+    --card:#1f1f1f;
+    --text:#f5f5f5;
+    --primary:#60a5fa;
+    --secondary:#3b82f6;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    transition:0.3s;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    text-align:center;
+    padding:3rem 1rem;
+}
+
+header h1{
+    font-size:2.8rem;
+}
+
+header p{
+    margin-top:10px;
+    font-size:1.1rem;
+}
+
+.theme-btn{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    background:#111827;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    list-style:none;
+}
+
+nav li{
+    margin:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#60a5fa;
+}
+
+/* =========================
+   MAIN GRID LAYOUT
+========================= */
+
+main{
+    display:grid;
+    grid-template-columns:1fr 3fr;
+    gap:20px;
+    padding:20px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+aside{
+    background:var(--card);
+    padding:20px;
+    border-radius:10px;
+    box-shadow:var(--shadow);
+}
+
+.profile{
+    text-align:center;
+}
+
+.profile img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.profile h2{
+    color:var(--primary);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+section{
+    background:var(--card);
+    padding:20px;
+    border-radius:10px;
+    box-shadow:var(--shadow);
+}
+
+section h2{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill{
+    background:var(--primary);
+    color:white;
+    padding:10px 15px;
+    border-radius:20px;
+}
+
+/* =========================
+   PROJECTS GRID
+========================= */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.project{
+    background:var(--bg);
+    padding:20px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.project:hover{
+    transform:translateY(-5px);
+}
+
+.project h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    padding:12px;
+    border:none;
+    background:var(--primary);
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:var(--secondary);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    background:#111827;
+    color:white;
+    padding:20px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:768px){
+
+    main{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:2.2rem;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    header h1{
+        font-size:1.8rem;
+    }
+
+    .profile img{
+        width:120px;
+        height:120px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Samrith Ram Karengula</h1>
+    <p>3rd Year B.Tech CSE Student | Aspiring Web Developer</p>
+
+    <button class="theme-btn" onclick="toggleTheme()">
+        Toggle Dark Mode
+    </button>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <aside>
+
+        <div class="profile">
+            <img src="C:\Users\jyothsna\Downloads\WhatsApp Image 2026-06-08 at 10.59.10 AM.jpeg">
+            <h2>Samrith</h2>
+            <p>B.Tech CSE Student</p>
+        </div>
+
+        <hr style="margin:20px 0;">
+
+        <h3>Quick Info</h3>
+        <p>Email: samrithkarengula@gmail.com</p>
+        <p>Location: India</p>
+        <p>3rd Year B.Tech CSE</p>
+        <p>Aspiring Web Developer</p>
+
+    </aside>
+
+    <div class="content">
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm <strong>Samrith Ram Karengula</strong>, a passionate
+                third-year B.Tech Computer Science and Engineering student.
+                I enjoy building responsive websites and learning modern web
+                technologies. My interests include front-end development,
+                UI/UX design, and creating user-friendly digital experiences.
+            </p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+
+            <ul>
+                <li>
+                    <strong>B.Tech in Computer Science and Engineering (CSE)</strong><br>
+                    Currently Pursuing 3rd Year
+                </li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+
+            <div class="skills">
+                <div class="skill">HTML5</div>
+                <div class="skill">CSS3</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Responsive Design</div>
+                <div class="skill">CSS Grid</div>
+                <div class="skill">Flexbox</div>
+                <div class="skill">Git & GitHub</div>
+                <div class="skill">Problem Solving</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="projects">
+
+                <div class="project">
+                    <h3>Weather Dashboard</h3>
+                    <p>
+                        Developed a responsive weather dashboard that provides
+                        real-time weather information, temperature, humidity,
+                        and forecasts using API integration.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3>E-Commerce Website</h3>
+                    <p>
+                        Built a modern online shopping website featuring
+                        product listings, shopping cart functionality,
+                        responsive layouts, and user-friendly navigation.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>
+                        Designed and developed a portfolio website using
+                        HTML5, CSS3, CSS Grid, Flexbox, and responsive
+                        design principles.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <form>
+                <input type="text" placeholder="Enter Your Name" required>
+
+                <input type="email" placeholder="Enter Your Email" required>
+
+                <textarea rows="5" placeholder="Enter Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Samrith Ram Karengula. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
